@@ -24,11 +24,11 @@ pip install --upgrade wheel
 # # export LDFLAGS="-L/opt/homebrew/opt/libxml2/lib"
 # # export CPPFLAGS="-I/opt/homebrew/opt/libxml2/include"
 
-# # export LDFLAGS="-L/opt/homebrew/opt/libxslt/lib"
-# # export CPPFLAGS="-I/opt/homebrew/opt/libxslt/include"
+export LDFLAGS="-L/opt/homebrew/opt/libxslt/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libxslt/include"
 # xcode-select --install
-# STATIC_DEPS=true pip3.4 install lxml
-# # STATIC_DEPS=true pip install lxml
+STATIC_DEPS=true pip install lxml
+# STATIC_DEPS=true pip install lxml
 
 # pip install PyYAML==6.0
 # pip install spacy-langdetect==0.1.2
