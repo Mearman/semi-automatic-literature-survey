@@ -1,6 +1,6 @@
 # SaLS: Semi-automatic Literature Survey
 
-This project implements SaLS: a semi-automatic program to survey research papers based on the systematic methodology proposed by Kitchenham et al.[1, 2]. The goal of this project is to semi-automate the research papers survey process while providing a framework to enable surveys reproducibility and evolution. 
+This project implements SaLS: a semi-automatic program to survey research papers based on the systematic methodology proposed by Kitchenham et al.[1, 2]. The goal of this project is to semi-automate the research papers survey process while providing a framework to enable surveys reproducibility and evolution.
 
 SaLS automatically retrives papers metadata based on queries that users provide according. These queries are used to consume the search APIs exposed by the most popular research papers repositories in different domains. Currently, SaLS retrieves papers information from the following repositories:
 
@@ -15,9 +15,13 @@ The retrieved metadata includes paper identifier (e.g., doi), publisher, publica
 
 SaLS merges papers information from different repositories, and then applies customised syntactic and semantic filters (i.e., Lbl2Vec)[3] to reduce the search space of papers according to users' interests.
 
+```sh
+
+```
+
 Once automatic filters are applied, the tool prompts the title and abstract of the paper in a centralised interface where users can decide if the paper should be included or not in the review (i.e., papers filtered by abstract). The URL of the papers that passed the filter by abstract is then prompted in the last filter, which requires the user to skim the full paper and decide if it is included or no.
 
-Then, the tool applies the snowballing step by retriving the metadata of the works that cited the selected papers in the last step (i.e., papers filtered by skimming the full text), and applies the automatic and semi-automatic filters on the citing papers. 
+Then, the tool applies the snowballing step by retriving the metadata of the works that cited the selected papers in the last step (i.e., papers filtered by skimming the full text), and applies the automatic and semi-automatic filters on the citing papers.
 
 The final list of papers is composed by the cited papers that passed the first round of filters, and the citing papers that passed the second round of filters (i.e., snowballing).
 
@@ -27,47 +31,59 @@ The following instructions were tested on the Windows Subsystem for Linux ([WSL]
 
 1. Clone this repository
 
-```
-git clone https://github.com/cabrerac/semi-automatic-literature-survey.git
-```
-```
-cd semi-automatic-literature-survey/
-```
-
-2. Create and activate virtual environment 
+```sh
+#git clone https://github.com/cabrerac/semi-automatic-literature-survey.git
 
 ```
+
+```sh
+#cd semi-automatic-literature-survey/
+
+```
+
+2. Create and activate virtual environment
+
+```sh
 python -m venv venv
+
 ```
-```
+
+```sh
 source venv/bin/activate
+
 ```
 
 3. Install requirements
 
-```
-pip install  -r requirements.txt
+```sh
+pip install -r requirements.txt -v
+
 ```
 
 4. Install language package for spacy
 
-```
+```sh
 python -m spacy download en_core_web_sm
+
 ```
 
 5. Download nltk resources
 
-```
+```sh
 python -c "import nltk; nltk.download('wordnet')"
+
 ```
-```
+
+```sh
 python -c "import nltk; nltk.download('omw-1.4')"
+
 ```
 
 6. Run the main passing the search parameters file. For example:
 
-```
+```sh
 python main.py parameters_ar.yaml
+
 ```
 
 A simple self-explanatory example of a search parameters file can be found in `./parameters_ar.yaml`. Alternatively, a more complex one including semantic filters can be found in `./parameters_doa.yaml`
