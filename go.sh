@@ -4,9 +4,7 @@ python -m venv venv
 source venv/bin/activate
 
 pip install --upgrade pip
-pip install --upgrade setuptools
-
-pip install --upgrade wheel
+pip install --upgrade setuptools wheel
 
 # # PyYAML==6.0
 # # pandas==1.4.3
@@ -18,11 +16,11 @@ pip install --upgrade wheel
 # # nltk==3.7
 # # lxml==4.9.1
 # # rich==13.4.2
-# brew uninstall libxslt
-# brew uninstall libxml2
 
-# # export LDFLAGS="-L/opt/homebrew/opt/libxml2/lib"
-# # export CPPFLAGS="-I/opt/homebrew/opt/libxml2/include"
+brew install libxslt libxml2
+export LDFLAGS="-L/opt/homebrew/opt/libxml2/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libxml2/include"
+gem install nokogiri -- --with-xslt-dir=/opt/homebrew/opt/libxslt
 
 # export LDFLAGS="-L/opt/homebrew/opt/libxslt/lib"
 # export CPPFLAGS="-I/opt/homebrew/opt/libxslt/include"
