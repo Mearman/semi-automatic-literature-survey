@@ -51,3 +51,4 @@ gem install nokogiri -- --with-xslt-dir=/opt/homebrew/opt/libxslt
 # python -m spacy download en_core_web_sm
 
 pip install -r requirements.txt -v
+ 
