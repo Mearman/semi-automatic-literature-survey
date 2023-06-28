@@ -3,6 +3,9 @@
 python -m venv venv
 source venv/bin/activate
 
+pip install --upgrade pip
+pip install --upgrade setuptools
+
 # # PyYAML==6.0
 # # pandas==1.4.3
 # # spacy-langdetect==0.1.2
