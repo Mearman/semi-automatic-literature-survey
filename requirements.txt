@@ -1,11 +1,11 @@
 PyYAML==6.0
-pandas==1.4.3
+pandas==2.0.2
 spacy-langdetect==0.1.2
-spacy==3.4.1
-elsapy==0.5.0
+spacy==3.5.3
+elsapy==0.5.1
 gensim==4.3.1
-lbl2vec==1.0.1
-nltk==3.7
-lxml==4.9.1
+lbl2vec
+nltk==3.8.1
+lxml
 rich==13.4.2
 
