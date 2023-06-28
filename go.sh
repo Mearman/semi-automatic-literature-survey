@@ -17,7 +17,15 @@ pip install --upgrade setuptools wheel
 # # lxml==4.9.1
 # # rich==13.4.2
 
-brew install libxslt libxml2
+# brew install libxslt libxml2
+
+brew install libxml2
+brew install libxslt
+brew link libxml2 --force
+brew link libxslt --force
+
+pip install lxml --only-binary lxml
+
 export LDFLAGS="-L/opt/homebrew/opt/libxml2/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/libxml2/include"
 gem install nokogiri -- --with-xslt-dir=/opt/homebrew/opt/libxslt
