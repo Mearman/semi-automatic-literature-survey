@@ -27,7 +27,7 @@ pip install --upgrade wheel
 # export LDFLAGS="-L/opt/homebrew/opt/libxslt/lib"
 # export CPPFLAGS="-I/opt/homebrew/opt/libxslt/include"
 # xcode-select --install
-STATIC_DEPS=true pip install lxml
+# STATIC_DEPS=true pip install lxml
 # STATIC_DEPS=true pip install lxml
 
 # pip install PyYAML==6.0
